@@ -43,14 +43,14 @@ console.log(48 !== '48');
 var animal = "cow";
 if(animal == "cow"){
     console.log("mooooo");
-}
+};
 
 var animal = "duck";
 if(animal == "cow"){
     console.log("Mooooo");
 }else{
     console.log("Hey! You're not a cow!");
-}
+};
 
 //E. Driver's Ed
 var driversAge = 15;
@@ -58,7 +58,7 @@ if(driversAge >= 16){
     console.log("Here are the keys!");
 }else{
     console.log("Sorry, you're too young.")
-}
+};
 
 // II. Loops
 /*
@@ -67,46 +67,46 @@ THIS IS GOOD: for(let i=0; i<100; i++)
 THIS IS NO GOOD: for(i=0; i<100; i++)
 */
 
-// // A. The basics
-// for(let i=0; i<=10; i++){
-//     console.log(i);
-// }
+// A. The basics
+for(let i=0; i<=10; i++){
+    console.log(i);
+};
 
-// for(let i=10; i<=400; i++){
-//     console.log(i);
-// }
+for(let i=10; i<=400; i++){
+    console.log(i);
+};
 
-// for(let i=12; i<4000; i+=3){
-//     console.log(i)
-// }
+for(let i=12; i<4000; i+=3){
+    console.log(i)
+};
 
 // B. Get even
-/*
+
 for(let i=0; i<=100 ;i++){
     if(i%2==0){
         console.log(i);
     }
-}
-*/
+};
+
 for(let i=0; i<=100; i++){
     if(i%2==0){
         console.log(i + "<-- is an even number");
     }
-}
+};
 
 // C. Give me five
 for (let i=0; i<=100; i++){
     if(i%5==0 && i!==0){
         console.log(`I found a ${i}. Hight five!`);
     }
-}
+};
 for (let i=0; i<=100; i++){
     if(i%5==0 && i!==0){
         console.log(`I found a ${i}. High five!`);
     }else if(i%3==0 && i!==0){
         console.log(`Three is a crowd`);
     }
-}
+};
 for (let i=0; i<=100; i++){
     if(i%5==0 && i%3==0){
         console.log(`I found a ${i}. High five! Three is a crowd`);
@@ -115,30 +115,27 @@ for (let i=0; i<=100; i++){
     }else if(i%3==0 && i!==0){
         console.log(`Three is a crowd`);
     }
-}
+};
 
 //D. Savings account
-/*
-let bank_account = 0;
-let i = 0;
-while(i<=10){
-    bank_account = bank_account+=i;
-    i++;
-}console.log(bank_account);
+// COMMMENTED OUT TO AVOID REDECLARING BLOCK-SCOPE VARIABLE
+// 1. Write code that will save the sum of all the numbers 1-10 to a variable called bank_account
+// let bank_account = 0;
+// let i = 0;
+// while(i<=10){
+//     bank_account +=i;
+//     i++;
+// };
+// console.log(bank_account);
 
-let bank_account = 0;
-let i = 0;
-while(i<=10){
-    bank_account = bank_account+=i;
-    i++;
-}console.log(bank_account);
-*/
+// 2. You got a bonus! your pay is now boubled each week. Write code that will save the sum of all the numbers between 1-100 multiplied by 2
 let bank_account = 0;
 let i = 1;
 while(i<=100){
-    bank_account = bank_account+=i*2;
+    bank_account +=i*2;
     i++;
-}console.log(bank_account);
+};
+console.log(bank_account);
 
 // III. Arrays & Control flow
 // A. Talk about it:
@@ -149,12 +146,13 @@ while(i<=100){
 */
 
 // B. Easy Does It
+// 1. Create an array that contains three quotes and store it in a variable called quotes.
 const quotes = ["To be or not to be", "This is Sparta!", "What's in the box?!"];
 
 // C. Accessing elements
 const randomThings = [1, 10, "Hello", true];
 // 1. How do you access the 1st element in the array?
-console.log(randomThings[0]);
+randomThings[0];
 // 2. Change the value of "Hello" to World
 randomThings[2] = "World";
 // 3. Check the value of the array to make sure it updated the array.
@@ -163,11 +161,12 @@ console.log(randomThings);
 // D. Change values
 const ourClass = ["Salty", "Zoom", "Sardine", "Slack", "Github"];
 // 1. What would you write to access the 3rd element of the array?
-console.log(ourClass[2]);
+ourClass[2];
 // 2. Change the value of "Github" to "Octocat"
 ourClass[4] = "Octocat";
 // 3. Add a new element, "Cloud City" to the array
 ourClass.push("Cloud City");
+console.log(ourClass);
 
 
 // E. Mix It Up
@@ -180,7 +179,7 @@ myArray.shift();
 // 3. Add the string "Bob Marley" to the beginning of the array.
 myArray.unshift("Bob Marley");
 // 4. Remonve the string of you choice from the end of the array.
-myArray.splice(5, 5);
+myArray.pop();
 // 5. Reverse this array using Array.prototype.reverse(). 
 myArray.reverse();
 // Did you mutate the array? what does mutate mean? Did the .reverse() method return anything? A? Yes the array was mutated, meaning the array itself was change instead of returning a new array with the changes.
@@ -232,11 +231,11 @@ const kristynsCloset = [
       "wool scarf",
       "raybans"
     ]
-  ]
+  ];
 //1. What's Kristyn wearing today? using bracket notation to access items in kristynsCloset, log the sentence "Kristyn is rocking that" + the THIRD item in Kristyn's closet "today!" to the console.
 console.log(`Kristyn is rocking that ${kristynsCloset[2]} today!`);
 //2. Kristyn just bought some sweet shades! Add "raybans" to her closet after "yellow knit hat"
-kristynsCloset[7] = "raybans";
+kristynsCloset.splice(6, 0, "raybans");
 //3. Kristyn spilled coffee on her hat... modify this item to read "stained knit hat" instead of yellow.
 kristynsCloset[5] = "stained knit hat";
 //4. Put together an outfit for Thom! Using bracket notation, access the first element in Thom's shirts array.
@@ -253,33 +252,159 @@ thomsCloset[1][2] = "Footie Pajamas";
 // IV. Functions
 // A. printGreeting
 const printGreeting = (name) => {
-    console.log("Hello there, " + name);
-}
-printGreeting("Slimer");
+    return "Hello there, " + name;
+};
+console.log(printGreeting("Slimer"));
 
 // B. printCool
 const printCool = (name) => {
-    console.log(name + " is cool!");
-}
-printCool("Captain Reynolds");
+    return name + " is cool!";
+};
+console.log(printCool("Captain Reynolds"));
 
 // C. calculateCube
 const calculateCube = (number) => {
-    console.log("=>", Math.pow(number, 3));
-}
-calculateCube(5)
+    return (number ** 3);
+};
+console.log(calculateCube(5));
 
 // D. isVowel
 const isVowel = (character) => {
     let ch = character.toLowerCase();
     if(ch == "a" ||ch ==  "e" ||ch ==  "i" ||ch ==  "o" ||ch ==  "u"){
-        console.log("=> true");
+        return true;
     }else{
-        console.log(false)
+        return false;
     }
-}
-console.log("A");
-console.log("b");
+};
+console.log(isVowel("A"));
+console.log(isVowel("z"));
 
 // E. getTwoLengths
+const getTwoLengths = (wrd1, wrd2) => {
+    let arr = [wrd1.length, wrd2.length];
+    return arr;
+};
+console.log(getTwoLengths("Hank", "Hippopopalous"));
+
+// F. getMultipleLengths
+const getMultipleLengths = (array) => {
+    let arr = [];
+    array.forEach((index) => {
+        arr.push(index.length);
+    })
+    return arr;
+};
+console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
+
+// G. maxOfThree
+const maxOfThree = (a, b, c) => {
+    if(a == b && a == c || a == b && a > c){
+        return a;
+    }else if(a > b && a > c){
+        return a;
+    }else if(b > a && b > c){
+        return b;
+    }else{
+        return c;
+    }
+};
+console.log(maxOfThree(6, 9, 1));
+console.log(maxOfThree(6, 6, 6));
+console.log(maxOfThree(9, 9, 1));
+console.log(maxOfThree(9, 1, 9));
+console.log(maxOfThree(6, 9, 10));
+console.log(maxOfThree(10, 9, 1));
+
+// H. printLongestWord
+const printLongestWord = (array) => {
+    let longest = array.reduce((a,b) => {
+        if(a.length >= b.length){
+            return a;
+        }else{
+            return b;
+        }
+    })
+    return longest;
+};
+console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));
+
+// V. Objects
+// A Make a user object
+const user = {
+        name: "Dale Gribble",
+        email: "daledeadbug@gmail.com",
+        age: 69,
+        purchased: [],
+    };
+
+// B. Update the user
+user.email = "rustyshackleford@gmail.com";
+
+// C. Adding keys and values
+user.location = "Arlen, Texas";
+
+// D. Shopaholic!
+user.purchased.push("carbohydrates");
+user.purchased.push("peace of mind");
+user.purchased.push("Merino jodhpurs");
+console.log(user.purchased[2]);
+
+// E. Object-within-object
+// 1. Write a friend object into you user object and give the fiend a name, age, location and purchased arry (empty)
+user.friend = {
+    name: "Bill Dauterive",
+    age: 70,
+    location: "Arlen, Texas",
+    purchased: [],
+};
+// 2. Console.log just the friends's name
+console.log(user.friend.name);
+// 3. Console.log just the friend's location
+console.log(user.friend.location);
+// 4. CHANGE the friend's age to 55
+user.friend.age = 55;
+// 5. The friend has purchased "The One Ring" .push() to add to the purchased array
+user.friend.purchased.push("The One Ring");
+// 6. The friend has purchased "A latte" .push() to add to purchased array
+user.friend.purchased.push("A latte");
+// 7. Console.log just "A latte" from purchased array
+console.log(user.friend.purchased[1]);
+// console.log(user)
+console.log(user);
+
+// F. Loops
+// 1. Write a for loop that iterates over the User's purchased array (NOT friend's), and prints each element to the console
+for (let i=0; i<user.purchased.length; i++){
+    console.log(user.purchased[i]);
+};
+// 2. Write a for loop that iterates over the Friend's purchased array, and prints each element to the console
+for (let i=0; i<user.friend.purchased.length; i++){
+    console.log(user.friend.purchased[i]);
+};
+
+// G. Functions can operate on objects
+// 1. Write a single function updateUser that takes no parameters. When the function is run, it should:
+// -increment the age by 1
+// -make the user's name uppercase
+const updateUser = () => {
+    user.age++;
+    user.name = user.name.toUpperCase();
+};
+updateUser();
+
+// 2. Write a function oldAndLoud that performs the same task as updateUser, but instead of hard-coading it to only work
+// on our user object, make it take a parameter person, and have it modify the object that is passed in as an arguments 
+// when the function is called. Call your oldAndLoud function with user as the argument.
+const oldAndLoud = (person) => {
+    for (let i=0; i<user.length; i++){
+        if(person == user.name){
+            user.age++;
+            user.name = user.name.toUpperCase();            
+        }
+    }
+};
+oldAndLoud(user)
+
+console.log(user)
 
